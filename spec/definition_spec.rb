@@ -57,7 +57,7 @@ describe('#definition') do
       definition1.save()
       definition2 = Definition.new("A device to transfer electricity", @word.id, nil)
       definition2.save()
-      expect(Definition.find(definition1)).to(eq(definition1))
+      expect(Definition.find(definition1.id)).to(eq(definition1))
     end
   end
 end

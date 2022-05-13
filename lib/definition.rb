@@ -27,4 +27,8 @@ class Definition
     @@definitions = {}
     @@id_count = 0
   end
+
+  def self.find(id)
+    @@definitions[id]
+  end
 end
