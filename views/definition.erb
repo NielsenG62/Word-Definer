@@ -1,5 +1,7 @@
-<h3>Word: <%= @definition.word.name %></h3>
-<h2>Definition: <%= @definition.name %></h2>
+<div class='group'>
+  <h3>Word: <%= @definition.word.name %></h3>
+  <h3>Definition: <%= @definition.name %></h3>
+</div>
 
 
 <form action="/words/<%= @definition.word.id %>/definitions/<%= @definition.id %>" method="post" class="form-group">
@@ -17,4 +19,6 @@
   <button class="btn btn-danger" type="submit">Delete definition</button>
 </form>
 
-<a href="/words/<%= @definition.word.id %>">Back to <%= @definition.word.name %></a>
+<div class='center'>
+  <a href="/words/<%= @definition.word.id %>">Back to <%= @definition.word.name %></a>
+</div>

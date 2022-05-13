@@ -17,7 +17,8 @@
     <input id="definition_name" name="definition_name" class="form-control" type="text">
   </div>
   <button type="submit" class="btn btn-success">Add definition</button>
+  <a class="btn btn-warning" href="/words/<%= @word.id %>/edit">Edit word</a>
 </form>
-
-<p><a href="/words/<%= @word.id %>/edit">Edit word</a></p>
-<a href="/words">Return to the word list</a>
+<div class='center'>
+  <a  href="/words">Return to the word list</a>
+</div>
