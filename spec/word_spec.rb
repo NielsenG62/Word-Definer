@@ -43,12 +43,21 @@ describe('#Word') do
   end
 
   describe('.find') do
-    it("finds an album by id") do
+    it("finds an word by id") do
       word1 = Word.new('Transformer', nil)
       word1.save()
       word2 = Word.new('Robot', nil)
       word2.save()
       expect(Word.find(word1.id)).to(eq(word1))
+    end
+  end
+
+  describe('#update') do
+    it("updates a word by id") do
+      word1 = Word.new('Transformer', nil)
+      word1.save()
+      word1.update("Prime")
+      expect(word1.name).to(eq("Prime"))
     end
   end
 end
