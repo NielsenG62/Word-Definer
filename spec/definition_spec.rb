@@ -60,4 +60,13 @@ describe('#definition') do
       expect(Definition.find(definition1.id)).to(eq(definition1))
     end
   end
+
+  describe('#update') do
+    it("updates an definiton by id") do
+      definition1 = Definition.new("Robot in disguise", @word.id, nil)
+      definition1.save()
+      definition1.update("A device to transfer electricity", @word.id)
+      expect(definition1.name).to(eq("A device to transfer electricity"))
+    end
+  end
 end
