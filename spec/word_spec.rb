@@ -1,5 +1,6 @@
 require 'rspec'
 require 'word'
+require 'definition'
 
 describe('#Word') do
 
@@ -72,3 +73,15 @@ describe('#Word') do
     end
   end
 end
+
+describe('#definitions') do
+    it("returns an word's definitions") do
+      word1 = Word.new('Transformer', nil)
+      word1.save()
+      definition1 = Definition.new("Robot in disguise", @word.id, nil)
+      definition1.save()
+      definition2 = Definition.new("A device to transfer electricity", @word.id, nil)
+      definition2.save()
+      expect(word1.definitions).to(eq([definition1, definition2]))
+    end
+  end
