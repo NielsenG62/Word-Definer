@@ -1,10 +1,12 @@
-<h2>Word: <%= @word.name %></h2>
+<div class='center' id='word-wrap'>
+<h2 id='word-display'>Word: <%= @word.name %></h2>
+</div>
 
   <% if @word.definitions %>
   <h3>Definitions:</h3>
     <ul>
       <% @word.definitions.each do |definition| %>
-        <li class='list'><a href="/words/<%= @word.id %>/definitions/<%= definition.id %>"><%= definition.name %></a></li>
+        <a href="/words/<%= @word.id %>/definitions/<%= definition.id %>"><li class='list'><%= definition.name %></li></a>
       <% end %>
     </ul>
   <% else %>
