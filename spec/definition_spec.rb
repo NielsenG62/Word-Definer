@@ -17,4 +17,14 @@ describe('#definition') do
       expect(definition1).to(eq(definition2))
     end
   end
+
+  describe('.all') do
+    it("returns a list of all definitions") do
+      definition1 = Definition.new("Robot in disguise", @album.id, nil)
+      definition1.save()
+      definition2 = Definition.new("A device to transfer electricity", @album.id, nil)
+      definition2.save()
+      expect(Definition.all).to(eq([definition1, definition2]))
+    end
+  end
 end
