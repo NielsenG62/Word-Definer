@@ -1,11 +1,11 @@
 body {
-  background-color: rgb(191, 243, 219);
+  background-color: #c9fcc7;
 }
 
 .container {
   width: 80%;
   margin-top: 2em;
-  background-color: azure;
+  background-color: white;
   padding: 2em;
   border: 3px solid black;
 }
@@ -37,4 +37,8 @@ h1 a:hover {
   margin: auto;
   margin-top: 1em;
   margin-bottom: 1em;
+}
+
+.list {
+  list-style-type: num;
 }
