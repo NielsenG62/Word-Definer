@@ -60,4 +60,15 @@ describe('#Word') do
       expect(word1.name).to(eq("Prime"))
     end
   end
+
+  describe('#delete') do
+    it("deletes a word by id") do
+      word1 = Word.new('Transformer', nil)
+      word1.save()
+      word2 = Word.new('Robot', nil)
+      word2.save()
+      word2.delete()
+      expect(Word.all).to(eq([word1]))
+    end
+  end
 end
