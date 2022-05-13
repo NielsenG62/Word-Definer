@@ -26,4 +26,15 @@ describe('#Word') do
       expect(word1).to(eq(word2))
     end
   end
+
+  describe('.clear') do
+    it('clears all words') do
+      word1 = Word.new('Transformer', nil)
+      word1.save()
+      word2 = Word.new('Robot', nil)
+      word2.save()
+      Word.clear()
+      expect(Word.all).to(eq([]))
+    end
+  end
 end
