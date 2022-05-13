@@ -6,12 +6,12 @@
   <label for="name">Rename word</label>
   <input id="name" name="name" type="text" class ="form-control">
 
-  <button type="submit">Update</button>
+  <button class="btn btn-success" type="submit">Update</button>
 </form>
 
 <form action="/words/<%= @word.id() %>" method='post'>
   <input type="hidden" name="_method" value='delete'>
-  <button type='submit'>Delete word</button>
+  <button class="btn btn-danger" type='submit'>Delete word</button>
 </form>
 
 <p><a href="/words">Return to word list</a></p>
