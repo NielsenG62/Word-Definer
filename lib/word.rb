@@ -24,4 +24,8 @@ class Word
     @@words = {}
     @@id_count = 0
   end
+
+  def self.find(id)
+    @@words[id]
+  end
 end
