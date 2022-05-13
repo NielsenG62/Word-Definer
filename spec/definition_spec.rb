@@ -5,6 +5,11 @@ require 'pry'
 
 describe('#definition') do
 
+  before(:each) do
+    @word = Word.new('Transformer', nil)
+    @word.save
+  end
+
   describe('#==') do
     it("is the same definition if it has the same attributes as another definition") do
       definition1 = Definition.new("Robot in disguise", @word.id, nil)
