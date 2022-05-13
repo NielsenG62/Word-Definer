@@ -3,6 +3,10 @@ require 'word'
 
 describe('#Word') do
 
+  before(:each) do
+    Word.clear()
+  end
+
   describe('.all') do
     it('returns an empty array when there are no words') do
       expect(Word.all).to(eq([]))
@@ -35,6 +39,16 @@ describe('#Word') do
       word2.save()
       Word.clear()
       expect(Word.all).to(eq([]))
+    end
+  end
+
+  describe('.find') do
+    it("finds an album by id") do
+      word1 = Word.new('Transformer', nil)
+      word1.save()
+      word2 = Word.new('Robot', nil)
+      word2.save()
+      expect(Word.find(word1.id)).to(eq(word1))
     end
   end
 end
