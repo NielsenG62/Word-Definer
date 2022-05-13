@@ -18,4 +18,13 @@ class Definition
   def self.all
     @@definitions.values
   end
+
+  def save
+    @@definitions[self.id] = Definition.new(self.name, self.word_id, self.id)
+  end
+
+  def self.clear
+    @@definitions = {}
+    @@id_count = 0
+  end
 end
