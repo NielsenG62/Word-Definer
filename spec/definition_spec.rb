@@ -40,4 +40,14 @@ describe('#definition') do
       expect(Definition.all).to(eq([]))
     end
   end
+
+  describe('#save') do
+    it("saves a definition") do
+      definition1 = Definition.new("Robot in disguise", @word.id, nil)
+      definition1.save()
+      definition2 = Definition.new("A device to transfer electricity", @word.id, nil)
+      definition2.save()
+      expect(Definition.all).to(eq([definition1, definition2]))
+    end
+  end
 end
