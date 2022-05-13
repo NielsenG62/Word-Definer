@@ -32,6 +32,11 @@ describe('create a song path', {:type => :feature}) do
     visit("/words/#{test_word.id}")
     fill_in('definition_name', :with => 'A piece of earth')
     click_on('Add definition')
-    expect(page).to have_content('A piece of earth')
+    click_on('A piece of earth')
+    fill_in('name', :with => 'Not just a boulder')
+    click_on('Update')
+    click_on('Not just a boulder')
+    click_on('Delete definition')
+    expect(page).to have_no_content('A piece of earth')
   end
 end
