@@ -2,7 +2,7 @@
 <h2 id='word-display'>Word: <%= @word.name %></h2>
 </div>
 
-  <% if @word.definitions %>
+  <% if @word.definitions.any? %>
   <h3>Definitions:</h3>
     <ul>
       <% @word.definitions.each do |definition| %>
