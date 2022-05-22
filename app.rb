@@ -20,8 +20,10 @@ end
 
 post('/words') do
   name = params[:word_name]
-  word = Word.new(name,nil)
-  word.save()
+  if name.downcase.count('a-z') > 0
+    word = Word.new(name,nil)
+    word.save()
+  end
   redirect to('/words')
 end
 
@@ -49,8 +51,10 @@ end
 
 post('/words/:id/definitions') do
   @word = Word.find(params[:id].to_i())
-  definition = Definition.new(params[:definition_name], @word.id, nil)
-  definition.save()
+  if (params[:definition_name]).downcase.count('a-z') > 0
+    definition = Definition.new(params[:definition_name], @word.id, nil)
+    definition.save()
+  end
   erb(:word)
 end
 
@@ -62,7 +66,9 @@ end
 patch('/words/:id/definitions/:definition_id') do
   @word = Word.find(params[:id].to_i())
   definition = Definition.find(params[:definition_id].to_i())
-  definition.update(params[:name], @word.id)
+  if definition.name.downcase.count('a-z') > 0
+    definition.update(params[:name], @word.id)
+  end
   erb(:word)
 end
 
